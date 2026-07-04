@@ -37,7 +37,9 @@ TaskFlow, retro arcade oyunlarından ilham alan **Cozy Pixel Art UI** temasıyla
   * Görevin sahibi olan kullanıcı durumu (Pending, In Progress, Completed) anlık güncelleyebilir; görevin sahibi olmayan diğer kullanıcılar ise sadece detayları okuyabilir.
 
 ### ⚙️ Genel Sistem Özellikleri
-* **Esnek Giriş Sistemi:** Kullanıcılar hem **kullanıcı adı** (`username`) hem de **e-posta** (`email`) adresleriyle şifrelerini girerek giriş yapabilirler.
+* **Esnek Giriş & Kayıt Sistemi:** 
+  * Kullanıcılar hem **kullanıcı adı** (`username`) hem de **e-posta** (`email`) adresleriyle giriş yapabilirler.
+  * Ziyaretçiler ana sayfa veya giriş ekranı üzerinden doğrudan **Kayıt (Register)** ekranına erişerek sisteme yeni bir hesap (`user` rolünde) oluşturabilirler.
 * **🔔 Toast Bildirim Sistemi:** Tarayıcının klasik `alert()` pencereleri yerine sağ alt köşede beliren retro animasyonlu Toast bildirimleri (`Success`, `Error`, `Warning`, `Info`).
 * **👤 Profil Sayfası:** Kullanıcıların kendi görünen isimlerini güncelleyebileceği ve şifrelerini değiştirebileceği profil yönetim alanı.
 * **🔄 401 Otomatik Çıkış Güvenliği:** Token süresi dolduğunda veya geçersiz olduğunda axios interceptor algılayarak otomatik olarak oturumu kapatır ve giriş sayfasına yönlendirir.
