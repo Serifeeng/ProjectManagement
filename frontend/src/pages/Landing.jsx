@@ -42,7 +42,8 @@ export default function Landing() {
           <h1>TASKFLOW</h1>
         </div>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Link to="/login" className="btn btn-primary">Giriş Yap</Link>
+          <Link to="/login" className="btn btn-ghost">Giriş Yap</Link>
+          <Link to="/register" className="btn btn-primary">Kaydol</Link>
         </div>
       </nav>
 
@@ -52,9 +53,12 @@ export default function Landing() {
           TaskFlow ile işlerinizi düzene koyun, ekibinizle cozy bir atmosferde 
           işbirliği yapın ve hedeflerinize piksel piksel ulaşın!
         </p>
-        <div className="hero-btns">
+        <div className="hero-btns" style={{ gap: '1rem' }}>
           <Link to="/login" className="btn btn-primary" style={{ padding: '0.8rem 1.6rem' }}>
             HEMEN BAŞLAYIN
+          </Link>
+          <Link to="/register" className="btn btn-ghost" style={{ padding: '0.8rem 1.6rem' }}>
+            ÜCRETSİZ KAYDOL
           </Link>
         </div>
       </section>

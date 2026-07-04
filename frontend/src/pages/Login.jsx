@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 
@@ -77,7 +77,7 @@ export default function Login() {
             />
           </div>
 
-          <div className="login-submit-row">
+          <div className="login-submit-row" style={{ flexDirection: 'column', gap: '1rem', alignItems: 'flex-end' }}>
             <button
               type="submit"
               className="login-submit-btn"
@@ -87,8 +87,12 @@ export default function Login() {
               {loading ? 'Signing in…' : 'S U B M I T'}
             </button>
           </div>
+          <div className="login-footer-text">
+            Don't have an account? <Link to="/register" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Register</Link>
+          </div>
         </form>
       </div>
     </div>
   );
 }
+

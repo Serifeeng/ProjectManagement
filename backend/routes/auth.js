@@ -7,6 +7,71 @@ const auth = require('../middleware/auth');
 const router = express.Router();
 
 /**
+ * POST /api/auth/register
+ * User registration
+ */
+router.post('/register', async (req, res) => {
+  try {
+    const { username, name, email, password } = req.body;
+
+    if (!username || !name || !email || !password) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ message: 'Password must be at least 6 characters long' });
+    }
+
+    // Check if user already exists
+    const emailExists = await User.findOne({ email });
+    if (emailExists) {
+      return res.status(400).json({ message: 'Email is already registered' });
+    }
+
+    const usernameExists = await User.findOne({ username });
+    if (usernameExists) {
+      return res.status(400).json({ message: 'Username is already taken' });
+    }
+
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create user (default role is user)
+    const user = new User({
+      username,
+      name,
+      email,
+      password: hashedPassword,
+      role: 'user'
+    });
+
+    await user.save();
+
+    // Create token
+    const token = jwt.sign(
+      { _id: user._id, role: user.role, name: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: '1d' }
+    );
+
+    res.status(201).json({
+      token,
+      user: {
+        _id: user._id,
+        username: user.username,
+        name: user.name,
+        email: user.email,
+        role: user.role
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error during registration' });
+  }
+});
+
+
+/**
  * POST /api/auth/login
  * Login with username or email
  */
