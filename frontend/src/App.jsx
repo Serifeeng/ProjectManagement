@@ -6,6 +6,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
@@ -38,6 +39,7 @@ export default function App() {
             {/* Public */}
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
             {/* Admin routes */}
             <Route path="/admin" element={
