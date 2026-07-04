@@ -1,18 +1,9 @@
-# 👾 TaskFlow — Retro Cozy Pixel Art Task Management App
+# Project Management App
 
-TaskFlow, retro arcade oyunlarından ilham alan **Cozy Pixel Art UI** temasıyla tasarlanmış, full-stack (MERN stack) bir görev ve proje yönetim uygulamasıdır. Klasik, sıkıcı kurumsal tasarımlardan uzak, pikselli ızgara arka planı, 8-bit yazı tipleri ve neon renk paleti ile eğlenceli ve samimi bir çalışma ortamı sunar.
-
+Full-stack  bir görev ve proje yönetim uygulamasıdır.
 ---
 
-## 📸 Ekran Görüntüleri & Tasarım Detayları
-
-* **Renk Paleti:** Cozy Mor (`#9867c5`), Retro Koyu Mor (`#2d1050`), Canlı Sarı (`#f7d358`) ve Neon Başarı/Hata renkleri.
-* **Tipografi:** Başlıklar ve butonlar için 8-bit tarzdaki **`Press Start 2P`**, içerikler için **`VT323`** yazı tipleri kullanılmıştır.
-* **Görsel Stil:** Yuvarlatılmamış keskin pikselli kenarlar (`border-radius: 0px`), kalın gölgeler (`pixel-shadow`) ve retro pikselli dolgulara sahip ilerleme çubukları (stripes progress-bar).
-
----
-
-## 🚀 Özellikler
+##  Özellikler
 
 ### 🛡️ Admin Paneli
 * **Kullanıcı Yönetimi (Userlist Management):** 
@@ -61,11 +52,6 @@ TaskFlow, retro arcade oyunlarından ilham alan **Cozy Pixel Art UI** temasıyla
 * Node.js (v16+)
 * Yerel veya Bulut MongoDB Veritabanı
 
-### 1. Depoyu Klonlayın
-```bash
-git clone <depo_adresi>
-cd task-manager
-```
 
 ### 2. Backend Kurulumu
 1. `backend` klasörüne geçin ve bağımlılıkları yükleyin:
@@ -98,11 +84,7 @@ cd task-manager
    ```bash
    npm run dev
    ```
-3. Tarayıcınızdan `http://localhost:5173` adresine giderek TaskFlow evrenine giriş yapın!
+3. Tarayıcınızdan `http://localhost:5173` adresine giderek giriş yapın!
 
 ---
 
-## 🔑 Varsayılan Giriş Bilgileri
-
-* **Admin Kullanıcı Adı:** `admin` (veya `admin@taskflow.com`)
-* **Admin Şifre:** `admin123`
